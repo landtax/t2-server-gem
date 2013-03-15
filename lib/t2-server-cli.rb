@@ -71,6 +71,9 @@ module T2Server
           "verification.") do
             conn_params[:verify_peer] = false
         end
+        opt.on("-s", "--ssl_version=VERSION", "Use the specified SSL version") do |val|
+            conn_params[:ssl_version] = val.chomp.to_sym
+        end
 
         # common options
         opt.on_tail("-u", "--username=USERNAME", "The username to use for " +
